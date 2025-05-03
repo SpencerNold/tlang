@@ -18,6 +18,8 @@ set(SOURCES
     src/compiler.c
     src/lexer.c
     src/tok_queue.c
+    src/parser.c
+    src/parse_tree.c
 )
 
 add_executable(${PROJECT_NAME}

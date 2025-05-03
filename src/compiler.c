@@ -27,11 +27,6 @@ void compile_file(context_t* context, char* path) {
         return;
     }
 
-    token_t* token = lex_stream_next(stream);
-    printf("type: 0x%04x\n", get_tok_type(token));
-    printf("value: %f\n", get_float_tok_value(token));
-    free_token(token);
-
     lex_close_input(input);
     lex_close_token_stream(stream);
     context->errno = 0;
