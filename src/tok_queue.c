@@ -40,7 +40,11 @@ token_t* poll_tok_queue(tok_queue_t* queue) {
 }
 
 int get_tok_type(token_t* token) {
-    return token->value;
+    return token->type;
+}
+
+char* get_str_tok_value(token_t* token) {
+    return (char*) token->value;
 }
 
 long long get_int_token_value(token_t* token) {
@@ -77,7 +81,7 @@ int append_float_tok_queue(tok_queue_t* queue, int type, double fp) {
     return _append_tok_queue(queue, type, value);
 }
 
-int append_str_tok_queue(tok_queue_t* queue, int type, const char* str, int len) {
+int append_str_tok_queue(tok_queue_t* queue, int type, char* str, int len) {
     char* value = (char*) malloc(sizeof(len + 1));
     if (value == NULL) {
         return 1;

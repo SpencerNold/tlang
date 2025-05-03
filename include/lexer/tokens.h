@@ -6,24 +6,23 @@
 #define ERROR          0x000
 #define WHITESPACE     0x100
 #define NOP            0x100
-#define FLOATING_POINT 0x101
-#define INTEGER        0x102
-#define IDENTIFIER     0x103
+#define STRING_LIT     0x101
+#define FLOATING_POINT 0x102
+#define INTEGER        0x103
+#define IDENTIFIER     0x104
 
-#define O_PARENTHESES  0x104
-#define C_PARENTHESES  0x105
-#define O_C_BRACKET    0x106
-#define C_C_BRACKET    0x107
-#define O_BRACKET      0x108
-#define C_BRACKET      0x109
-#define DOT            0x10A
-#define QUOTE          0x10B
-#define D_QUOTE        0x10C
-#define T_QUOTE        0x10D
-#define COMMA          0x10E
+#define O_PARENTHESES  0x105
+#define C_PARENTHESES  0x106
+#define O_C_BRACKET    0x107
+#define C_C_BRACKET    0x108
+#define O_BRACKET      0x109
+#define C_BRACKET      0x10A
+#define DOT            0x10B
+#define COMMA          0x10C
 
 #define TRUE_VALUE     0x110
 #define FALSE_VALUE    0x111
+#define NULL_VALUE     0x112
 
 // types
 #define TYPE_MASK      0x11FF
@@ -42,6 +41,7 @@
 #define FUNCTION       0x110C
 #define VOID           0x110D
 #define STRING         0x110E
+
 // operations
 #define OPER_MASK     0x21FF
 #define EQ_OPER       0x2100
@@ -101,6 +101,7 @@
 #define ASYNC         0x3117
 #define FUTURE        0x3118
 #define UNSAFE        0x3119
+#define DEFER         0x311A
 
 typedef struct {
     int start;

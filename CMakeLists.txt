@@ -15,6 +15,7 @@ add_custom_command(
 )
 
 set(SOURCES
+    src/compiler.c
     src/lexer.c
     src/tok_queue.c
 )
