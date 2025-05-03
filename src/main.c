@@ -2,5 +2,5 @@
 
 int main() {
     context_t context;
-    compile_file(&context, "test.tl");
+    compile_file(&context, "stdlib/test.tl");
 }

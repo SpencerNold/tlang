@@ -205,7 +205,7 @@ lex_token_stream_t* lex_run(lex_input_t* input) {
             }
 
             // Numeric Literal
-            [1-9][0-9]* { // Decimal
+            "-"?[1-9][0-9]* { // Decimal
                 long long value = _parse_dec_from_re2c(input);
                 _append_decimal_literal(stream, INTEGER, value);
                 continue;
@@ -215,7 +215,7 @@ lex_token_stream_t* lex_run(lex_input_t* input) {
                 _append_decimal_literal(stream, INTEGER, value);
                 continue;
             }
-            [0-9]* "." [0-9]+ | [0-9]+ "." { // Float
+            "-"?([0-9]* "." [0-9]+ | [0-9]+ ".") { // Float
                 double value = _parse_float_from_re2c(input);
                 _append_floating_point_literal(stream, FLOATING_POINT, value);
                 continue;

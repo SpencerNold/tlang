@@ -29,9 +29,7 @@ void compile_file(context_t* context, char* path) {
 
     token_t* token = lex_stream_next(stream);
     printf("type: 0x%04x\n", get_tok_type(token));
-    char* str = get_str_tok_value(token);
-    printf("value: %s\n", str);
-    printf("len: %lu\n", strlen(str));
+    printf("value: %f\n", get_float_tok_value(token));
     free_token(token);
 
     lex_close_input(input);
