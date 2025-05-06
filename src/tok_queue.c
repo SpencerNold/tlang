@@ -110,10 +110,17 @@ int _append_tok_queue(tok_queue_t* queue, int type, void* value) {
 }
 
 void free_token(token_t* token) {
+    /*
+
+    Commenting this out, as I feel for now at least,
+    getting the next token should pass ownership to
+    the parser of the value itself
+
     void* value = token->value;
     if (value != NULL) {
         free(value);
     }
+    */
     free(token);
 }
 

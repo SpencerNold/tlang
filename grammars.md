@@ -1,4 +1,6 @@
-ForLoopRange:
-    for (Identifier in range([Identifier|Integer],Identifier|Integer))Statement
-ForLoopEach:
-    for (Identifier in Iterable)Statement
+FILE -> INCLUDE | DECLARATION | CLASS | lambda
+INCLUDE -> include *STRING_LIT*
+DECLARATION -> [ACCESS] *TYPE* *IDENTIFIER*TAIL
+TAIL -> (PARAMETER...)BODY | =*VALUE*
+PARAMETER -> *TYPE* IDENTIFIER
+BODY ->

@@ -324,11 +324,16 @@ lex_token_stream_t* lex_run(lex_input_t* input) {
             }
         */
     }
+    _append_token(stream, NOP);
     return stream;
 }
 
 token_t* lex_stream_next(lex_token_stream_t* stream) {
     return poll_tok_queue(stream->queue);
+}
+
+token_t* lex_stream_check(lex_token_stream_t* stream) {
+    return peek_tok_queue(stream->queue);
 }
 
 void lex_free_token(token_t* token) {
